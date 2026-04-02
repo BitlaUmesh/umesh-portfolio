@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitla Umesh Kumar — AI Engineer</title>
+  <meta name="description" content="AI Engineer & Full-Stack Developer. CSE student at SVIT Hyderabad specializing in AI/ML. Hackathon champion, LEGION Club Founder." />
+  <meta property="og:title" content="Bitla Umesh Kumar — AI Engineer" />
+  <meta property="og:description" content="Building AI-native applications that solve real-world problems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ CANVAS PARTICLES ============ -->
+  <canvas id="particles-canvas"></canvas>
+  <!-- Background orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="logo-text">UK</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+          <span class="icon-sun">☀️</span>
+          <span class="icon-moon">🌙</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#experience" class="mobile-link">Experience</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero">
+    <div class="hero-container container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for Opportunities
+        </div>
+        <h1 class="hero-name">
+          Bitla Umesh<br /><span class="gradient-text">Kumar</span>
+        </h1>
+        <p class="hero-role">AI Engineer &amp; Full-Stack Developer</p>
+        <p class="hero-typewriter">
+          <span id="typewriter"></span><span class="cursor">|</span>
+        </p>
+        <p class="hero-summary">
+          CSE student specializing in AI/ML and full-stack development.<br />
+          Founder of SVIT's LEGION Club · 4x Hackathon Finalist · Software Engineer Intern
+        </p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">View My Work <span>→</span></a>
+          <a href="assets/Umesh_Resume.pdf" class="btn btn-ghost" download>Download Resume</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/BitlaUmesh" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/bitla-umesh-kumar" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:bitlaumesh04@gmail.com" class="social-btn" aria-label="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="hero-image-backdrop"></div>
+        <img src="assets/profile.jpg" alt="Bitla Umesh Kumar" class="hero-image">
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span class="scroll-text">Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-label">WHO I AM</div>
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-stats">
+          <div class="stat-card glass-card">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-number">4+</div>
+            <div class="stat-label">Hackathons</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-icon">💼</div>
+            <div class="stat-number">1</div>
+            <div class="stat-label">Internship</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-icon">🚀</div>
+            <div class="stat-number">4</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-icon">👥</div>
+            <div class="stat-number">1</div>
+            <div class="stat-label">Club Founded</div>
+          </div>
+        </div>
+        <div class="about-bio">
+          <p>I'm a CSE student at SVIT Hyderabad, specializing in AI/ML integration and full-stack development. I build AI-native applications that solve real-world problems — from cybersecurity platforms to intelligent shopping agents.</p>
+          <p>As the Founder and Lead of SVIT's <strong>LEGION Club</strong>, I've proven I can lead teams and orchestrate complex events across the department. Currently I'm a <strong>Software Engineer Intern at YugaYatra Retail OPC Pvt. Ltd.</strong>, contributing to scalable e-commerce solutions using cutting-edge AI.</p>
+          <p>My code speaks in Python, React, &amp; FastAPI. My ambition speaks on hackathon stages and in late-night builds.</p>
+          <div class="about-chips">
+            <span class="chip">Python</span>
+            <span class="chip">React</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">AI/ML</span>
+            <span class="chip">ChromaDB</span>
+            <span class="chip">Team Leader</span>
+          </div>
+          <div class="about-contact">
+            <span>📧 bitlaumesh04@gmail.com</span>
+            <span>📞 +91 79898 51858</span>
+            <span>📍 Hyderabad, India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-label">WHAT I USE</div>
+      <h2 class="section-title">Technical Arsenal</h2>
+      <p class="section-subtitle">Technologies I work with</p>
+      <div class="skills-grid">
+        <div class="skill-category glass-card">
+          <h3 class="category-title"><span class="cat-icon">💻</span> Languages</h3>
+          <div class="skill-chips">
+            <span class="skill-chip chip-lang">Python</span>
+            <span class="skill-chip chip-lang">C</span>
+            <span class="skill-chip chip-lang">HTML</span>
+            <span class="skill-chip chip-lang">CSS</span>
+          </div>
+        </div>
+        <div class="skill-category glass-card">
+          <h3 class="category-title"><span class="cat-icon">⚙️</span> Frameworks &amp; Tools</h3>
+          <div class="skill-chips">
+            <span class="skill-chip chip-fw">React</span>
+            <span class="skill-chip chip-fw">FastAPI</span>
+            <span class="skill-chip chip-fw">Streamlit</span>
+            <span class="skill-chip chip-fw">ChromaDB</span>
+            <span class="skill-chip chip-fw">Firebase</span>
+            <span class="skill-chip chip-fw">Git</span>
+          </div>
+        </div>
+        <div class="skill-category glass-card">
+          <h3 class="category-title"><span class="cat-icon">🧠</span> AI / ML</h3>
+          <div class="skill-chips">
+            <span class="skill-chip chip-ai">Llama 3.1</span>
+            <span class="skill-chip chip-ai">Groq</span>
+            <span class="skill-chip chip-ai">Sentence Transformers</span>
+            <span class="skill-chip chip-ai">Computer Vision</span>
+          </div>
+        </div>
+        <div class="skill-category glass-card">
+          <h3 class="category-title"><span class="cat-icon">🛠️</span> Dev Tools</h3>
+          <div class="skill-chips">
+            <span class="skill-chip chip-tool">Cursor AI</span>
+            <span class="skill-chip chip-tool">Antigravity</span>
+            <span class="skill-chip chip-tool">GitHub</span>
+            <span class="skill-chip chip-tool">VS Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-label">MY JOURNEY</div>
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot pulse"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-header">
+              <div class="timeline-company-icon">YY</div>
+              <div>
+                <h3 class="timeline-company">YugaYatra Retail OPC Pvt. Ltd.</h3>
+                <p class="timeline-role">Software Engineer Intern</p>
+              </div>
+              <span class="timeline-badge present-badge">PRESENT</span>
+            </div>
+            <p class="timeline-date">📅 Mar 2026 – Present</p>
+            <ul class="timeline-bullets">
+              <li>Developing scalable web applications utilizing Cursor AI, Firebase Studio, and integrated AI technologies.</li>
+              <li>Contributing to live freelance projects and assisting in e-commerce deployments and seller portal management.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Cursor AI</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">React</span>
+              <span class="tag">AI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot pulse"></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-header">
+              <div class="timeline-company-icon">LC</div>
+              <div>
+                <h3 class="timeline-company">LEGION Club (SVIT)</h3>
+                <p class="timeline-role">Founder &amp; Non-Technical Lead</p>
+              </div>
+              <span class="timeline-badge present-badge">PRESENT</span>
+            </div>
+            <p class="timeline-date">📅 Feb 2026 – Present</p>
+            <ul class="timeline-bullets">
+              <li>Founded and structured the CSE Department club into Technical and Non-Technical divisions to serve the broader student body.</li>
+              <li>Directed the Non-Technical division, orchestrating multiple department-wide events and managing all logistical operations.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Leadership</span>
+              <span class="tag">Event Management</span>
+              <span class="tag">Team Building</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-label">HACKATHON BUILDS &amp; SIDE PROJECTS</div>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card glass-card">
+          <div class="project-banner banner-red">
+            <div class="banner-pattern"></div>
+            <span class="project-icon">🔐</span>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <h3 class="project-name">SENTRY</h3>
+              <span class="project-badge badge-gold">🏆 National Hackathon</span>
+            </div>
+            <p class="project-event">Novus'24 National Hackathon</p>
+            <p class="project-desc">AI-Native, ChatOps-first Security Orchestration platform to mitigate alert fatigue in SOCs. Architected a FastAPI backend integrated with Llama 3.1 (via Groq) for zero-shot threat mapping to MITRE ATT&CK. Human-in-the-Loop via Telegram Bot API.</p>
+            <div class="project-tech">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">FastAPI</span>
+              <span class="tech-chip">Llama 3.1</span>
+              <span class="tech-chip">Groq</span>
+              <span class="tech-chip">Telegram API</span>
+              <span class="tech-chip">MITRE ATT&CK</span>
+            </div>
+            <a href="https://github.com/BitlaUmesh/SENTRY" target="_blank" class="project-link">View on GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card glass-card">
+          <div class="project-banner banner-purple">
+            <div class="banner-pattern"></div>
+            <span class="project-icon">🧠</span>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <h3 class="project-name">Neural-Sync</h3>
+              <span class="project-badge badge-silver">🥈 4th Place</span>
+            </div>
+            <p class="project-event">HackForge 48-Hour National Hackathon</p>
+            <p class="project-desc">Python framework synchronizing neural network outputs with high-frequency data streams. Optimized Git-versioned data pipelines to reduce processing latency for real-time AI inference. Secured 4th Place and a Software Engineering Internship.</p>
+            <div class="project-tech">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">Git</span>
+              <span class="tech-chip">Neural Networks</span>
+              <span class="tech-chip">Data Pipelines</span>
+            </div>
+            <a href="https://github.com/BitlaUmesh/Neural_Sync" target="_blank" class="project-link">View on GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card glass-card">
+          <div class="project-banner banner-teal">
+            <div class="banner-pattern"></div>
+            <span class="project-icon">🛒</span>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <h3 class="project-name">Shopping Agent</h3>
+              <span class="project-badge badge-blue">🤖 AI Agent</span>
+            </div>
+            <p class="project-event">GDG Hyderabad Agent-A-Thon</p>
+            <p class="project-desc">AI-powered price-comparison engine using Streamlit and Python to aggregate e-commerce data via Google APIs. ChromaDB + Sentence Transformers for semantic search and highly accurate cross-site product matching.</p>
+            <div class="project-tech">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">Streamlit</span>
+              <span class="tech-chip">ChromaDB</span>
+              <span class="tech-chip">Sentence Transformers</span>
+              <span class="tech-chip">Google APIs</span>
+            </div>
+            <a href="https://github.com/BitlaUmesh/Shopping-Agent" target="_blank" class="project-link">View on GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card glass-card">
+          <div class="project-banner banner-green">
+            <div class="banner-pattern"></div>
+            <span class="project-icon">♻️</span>
+          </div>
+          <div class="project-body">
+            <div class="project-header">
+              <h3 class="project-name">EcoScan AI</h3>
+              <span class="project-badge badge-green">🌱 National Hackathon</span>
+            </div>
+            <p class="project-event">Data Dynamo 2.0 National Hackathon</p>
+            <p class="project-desc">Computer vision-based AI agent using Python to classify waste via real-time camera feeds. Developed a responsive HTML5/CSS3 front-end that delivers step-by-step recycling instructions to users.</p>
+            <div class="project-tech">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">Computer Vision</span>
+              <span class="tech-chip">HTML5</span>
+              <span class="tech-chip">CSS3</span>
+            </div>
+            <a href="https://github.com/BitlaUmesh/EcoScan-AI" target="_blank" class="project-link">View on GitHub →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-label">ACADEMIC BACKGROUND</div>
+      <h2 class="section-title">Education</h2>
+      <div class="edu-card glass-card">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-content">
+          <h3 class="edu-institution">Swami Vivekananda Institute of Technology</h3>
+          <p class="edu-degree">B.Tech in Computer Science and Engineering (CSE)</p>
+          <p class="edu-date">📅 Sept 2023 – May 2027</p>
+          <span class="gpa-badge">GPA: 7.7 / 10.0</span>
+          <div class="edu-courses">
+            <span class="course-chip">Data Structures</span>
+            <span class="course-chip">Computer Networking</span>
+            <span class="course-chip">DevOps</span>
+            <span class="course-chip">Database Management Systems</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-label">LET'S CONNECT</div>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">I'm always open to discussing new projects, creative ideas, or opportunities to be part of something amazing.</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item glass-card">
+            <span class="contact-icon">📧</span>
+            <div>
+              <p class="contact-label">Email</p>
+              <a href="mailto:bitlaumesh04@gmail.com" class="contact-value">bitlaumesh04@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item glass-card">
+            <span class="contact-icon">📞</span>
+            <div>
+              <p class="contact-label">Phone</p>
+              <a href="tel:+917989851858" class="contact-value">+91 79898 51858</a>
+            </div>
+          </div>
+          <div class="contact-item glass-card">
+            <span class="contact-icon">📍</span>
+            <div>
+              <p class="contact-label">Location</p>
+              <p class="contact-value">Hyderabad, India</p>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com/BitlaUmesh" target="_blank" class="social-link-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/bitla-umesh-kumar" target="_blank" class="social-link-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrap glass-card">
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+            <div class="form-group">
+              <input type="text" name="name" id="name" required placeholder="Your Name" class="form-input" />
+              <label for="name" class="form-label">Your Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" id="email" required placeholder="Your Email" class="form-input" />
+              <label for="email" class="form-label">Your Email</label>
+            </div>
+            <div class="form-group">
+              <input type="text" name="subject" id="subject" required placeholder="Subject" class="form-input" />
+              <label for="subject" class="form-label">Subject</label>
+            </div>
+            <div class="form-group">
+              <textarea name="message" id="message" required placeholder="Your Message" class="form-input form-textarea" rows="4"></textarea>
+              <label for="message" class="form-label">Your Message</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+              Send Message →
+            </button>
+            <p id="form-status" class="form-status"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="footer">
+    <div class="footer-gradient-line"></div>
+    <div class="container footer-content">
+      <p class="footer-copy">Designed &amp; Built by <span class="gradient-text">Bitla Umesh Kumar</span></p>
+      <div class="footer-socials">
+        <a href="https://github.com/BitlaUmesh" target="_blank" aria-label="GitHub" class="footer-social">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/bitla-umesh-kumar" target="_blank" aria-label="LinkedIn" class="footer-social">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:bitlaumesh04@gmail.com" aria-label="Email" class="footer-social">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+        </a>
+      </div>
+      <p class="footer-legal">© 2025 All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
