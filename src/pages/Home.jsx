@@ -205,7 +205,6 @@ export default function Home() {
       <section className="section intro-sandbox-section">
         <div className="container intro-sandbox-container">
           <div className="intro-text-column">
-            <div className="section-label">Brief Intro</div>
             <h2 className="section-title">Behind the Code.</h2>
             {personalInfo.aboutText.slice(0, 2).map((para, i) => (
               <p key={i} className="intro-para">
@@ -225,7 +224,6 @@ export default function Home() {
       
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <div className="section-label">Highlight</div>
           <h2 className="section-title">Top Projects</h2>
           <div className="projects-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 480px))', justifyContent: 'center', maxWidth: '1000px', margin: '0 auto' }}>
             {projectsData.filter(p => p.topProject).slice(0, 2).map((project, idx) => (
