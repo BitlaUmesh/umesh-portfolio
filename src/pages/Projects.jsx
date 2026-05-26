@@ -1,6 +1,8 @@
 import PageTransition from '../components/PageTransition';
 import { projectsData, personalInfo } from '../data/constants';
 import { Helmet } from 'react-helmet-async';
+import { FaGithub } from 'react-icons/fa';
+import ProjectGraphics from '../components/ProjectGraphics';
 
 export default function Projects() {
   const handleTilt = (e) => {
@@ -20,17 +22,16 @@ export default function Projects() {
       <Helmet>
         <title>Projects | {personalInfo.name}</title>
       </Helmet>
-      <section className="section" id="projects" style={{ paddingTop: '150px' }}>
+      <section className="section" id="projects" style={{ paddingTop: '130px' }}>
         <div className="container">
-          <div className="section-label">HACKATHON BUILDS &amp; SIDE PROJECTS</div>
-          <h2 className="section-title">Featured Projects</h2>
+          <h2 className="about-section-title">FEATURED WORK</h2>
           <div className="projects-grid">
             
             {projectsData.map((project, idx) => (
               <div key={idx} className="project-card glass-card" onMouseMove={handleTilt} onMouseLeave={resetTilt}>
                 <div className={`project-banner ${project.bannerClass}`}>
                   <div className="banner-pattern"></div>
-                  <span className="project-icon">{project.icon}</span>
+                  <ProjectGraphics type={project.graphicType} />
                 </div>
                 <div className="project-body">
                   <div className="project-header">
@@ -42,7 +43,10 @@ export default function Projects() {
                   <div className="project-tech">
                     {project.tech.map(t => <span key={t} className="tech-chip">{t}</span>)}
                   </div>
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">View on GitHub →</a>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link interactive">
+                    <FaGithub size={14} />
+                    View on GitHub
+                  </a>
                 </div>
               </div>
             ))}

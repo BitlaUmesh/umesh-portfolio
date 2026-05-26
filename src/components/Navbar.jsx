@@ -34,9 +34,9 @@ export default function Navbar() {
   return (
     <nav id="navbar" style={{ boxShadow: scrolled ? '0 4px 32px rgba(108,99,255,0.12)' : 'none' }}>
       <div className="nav-container">
-        <Link to="/" className="nav-logo" aria-label="Home">
-          <span className="logo-text">UK</span>
-        </Link>
+        <a href="/" className="nav-logo" aria-label="Home">
+          <img src="/logo_only.png" alt="Umesh Kumar Logo" className="logo-img" />
+        </a>
         <ul className="nav-links">
           {navLinks.map((link) => (
             <li key={link.name}>

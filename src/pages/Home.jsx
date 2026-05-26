@@ -4,9 +4,59 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import PageTransition from '../components/PageTransition';
 import MagneticButton from '../components/MagneticButton';
 import ResumeViewer from '../components/ResumeViewer';
-import { personalInfo, projectsData, socialLinks } from '../data/constants';
+import { personalInfo, projectsData, socialLinks, homeHighlights } from '../data/constants';
 import { Helmet } from 'react-helmet-async';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import DevCard from '../components/DevCard';
+import ProjectGraphics from '../components/ProjectGraphics';
+
+function TypewriterText() {
+  const words = [
+    "AI Engineer",
+    "Full-Stack Developer",
+    "RAG Platform Architect",
+    "SecOps Automation Builder"
+  ];
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [reverse, setReverse] = useState(false);
+  const [blink, setBlink] = useState(true);
+
+  // Blinking cursor effect
+  useEffect(() => {
+    const blinkTimeout = setTimeout(() => {
+      setBlink((prev) => !prev);
+    }, 500);
+    return () => clearTimeout(blinkTimeout);
+  }, [blink]);
+
+  // Typing effect logic
+  useEffect(() => {
+    if (subIndex === words[index].length + 1 && !reverse) {
+      const delayTimeout = setTimeout(() => setReverse(true), 1600);
+      return () => clearTimeout(delayTimeout);
+    }
+
+    if (subIndex === 0 && reverse) {
+      setReverse(false);
+      setIndex((prev) => (prev + 1) % words.length);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setSubIndex((prev) => prev + (reverse ? -1 : 1));
+    }, reverse ? 30 : 80);
+
+    return () => clearTimeout(timeout);
+  }, [subIndex, reverse, index]);
+
+  return (
+    <span className="hero-typewriter">
+      {words[index].substring(0, subIndex)}
+      <span className="cursor">|</span>
+    </span>
+  );
+}
 
 export default function Home() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
@@ -37,7 +87,7 @@ export default function Home() {
     <PageTransition>
       <Helmet>
         <title>{personalInfo.name} | {personalInfo.role}</title>
-        <meta name="description" content={personalInfo.shortDesc.replace('\n', ' ')} />
+        <meta name="description" content={personalInfo.shortDesc.replace(/<[^>]*>/g, '')} />
       </Helmet>
       
       <ResumeViewer 
@@ -65,28 +115,41 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Bitla Umesh<br /><span className="gradient-text">Kumar</span>
+              Bitla Umesh<br />Kumar
             </Motion.h1>
             
-            <Motion.p 
-              className="hero-role"
+            <Motion.div 
+              className="hero-role-wrapper"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              {personalInfo.role}
-            </Motion.p>
+              <TypewriterText />
+            </Motion.div>
             
-            <Motion.p 
-              className="hero-summary"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              {personalInfo.shortDesc.split('\n').map((line, i) => (
-                <span key={i}>{line}<br /></span>
-              ))}
-            </Motion.p>
+            <div className="hero-highlights-container">
+              {homeHighlights.map((hl, idx) => {
+                const parts = hl.text.split('@');
+                const content = parts.length > 1 ? (
+                  <>
+                    {parts[0]} <span className="hl-at">@</span><span className="hl-company">{parts[1]}</span>
+                  </>
+                ) : hl.text;
+                
+                return (
+                  <Motion.div 
+                    key={idx}
+                    className="hero-highlight-pill interactive"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5 + idx * 0.05 }}
+                  >
+                    <span className="hl-icon">{hl.icon}</span>
+                    <span className="hl-text">{content}</span>
+                  </Motion.div>
+                );
+              })}
+            </div>
             
             <Motion.div 
               className="hero-ctas"
@@ -138,34 +201,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TEASERS */}
-      <section className="section">
-        <div className="container" style={{ textAlign: 'center', maxWidth: '800px' }}>
-          <div className="section-label">Brief Intro</div>
-          <h2 className="section-title">Hello World.</h2>
-          {personalInfo.aboutText.slice(0, 2).map((para, i) => (
-            <p key={i} style={{ color: 'var(--on-surface-muted)', fontSize: '1.1rem', marginBottom: '1.2rem', lineHeight: '1.8' }}>
-              {para}
-            </p>
-          ))}
-          <Link to="/about" className="btn btn-primary interactive" style={{ marginTop: '0.8rem' }}>Read Full Story</Link>
+      {/* TEASERS & SANDBOX */}
+      <section className="section intro-sandbox-section">
+        <div className="container intro-sandbox-container">
+          <div className="intro-text-column">
+            <div className="section-label">Brief Intro</div>
+            <h2 className="section-title">Behind the Code.</h2>
+            {personalInfo.aboutText.slice(0, 2).map((para, i) => (
+              <p key={i} className="intro-para">
+                {para}
+              </p>
+            ))}
+            <div className="intro-ctas-row">
+              <Link to="/about" className="btn btn-primary interactive">Read Full Story</Link>
+              <Link to="/projects" className="btn btn-ghost interactive">All Projects</Link>
+            </div>
+          </div>
+          <div className="sandbox-column">
+            <DevCard />
+          </div>
         </div>
       </section>
       
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <div className="section-label">Highlight</div>
-          <h2 className="section-title">Top Project</h2>
-          <div className="projects-grid" style={{ gridTemplateColumns: 'minmax(320px, 600px)', justifyContent: 'center' }}>
-            {projectsData.filter(p => p.topProject).slice(0, 1).map((project, idx) => (
+          <h2 className="section-title">Top Projects</h2>
+          <div className="projects-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 480px))', justifyContent: 'center', maxWidth: '1000px', margin: '0 auto' }}>
+            {projectsData.filter(p => p.topProject).slice(0, 2).map((project, idx) => (
               <div key={idx} className="project-card glass-card" onMouseMove={handleTilt} onMouseLeave={resetTilt}>
                 <div className={`project-banner ${project.bannerClass}`}>
                   <div className="banner-pattern"></div>
-                  <span className="project-icon">{project.icon}</span>
+                  <ProjectGraphics type={project.graphicType} />
                 </div>
                 <div className="project-body" style={{ textAlign: 'left' }}>
                   <div className="project-header">
-                    <h3 className="project-name">{project.name}</h3>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <h3 className="project-name">{project.name}</h3>
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-github-link interactive" aria-label="GitHub Repository" style={{ color: 'var(--on-surface-muted)', display: 'inline-flex' }}>
+                        <FaGithub size={16} />
+                      </a>
+                    </div>
                     <span className={`project-badge ${project.badge.class}`}>{project.badge.text}</span>
                   </div>
                   <p className="project-desc">{project.desc}</p>

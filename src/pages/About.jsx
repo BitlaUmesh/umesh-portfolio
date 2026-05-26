@@ -20,28 +20,27 @@ export default function About() {
         <meta name="description" content="Learn more about my background, skills, and experience as an AI Engineer and Full-Stack Developer." />
       </Helmet>
       
-      <section className="section" style={{ paddingTop: '150px' }}>
+      <section className="section" style={{ paddingTop: '130px' }}>
         <div className="container">
-          <div className="section-label">WHO I AM</div>
-          <h2 className="section-title">About Me</h2>
+          <h2 className="about-section-title">WHO I AM</h2>
           <div className="about-grid">
             <div className="about-stats">
-              <div className="stat-card glass-card">
+              <div className="stat-card glass-card stat-hackathon">
                 <div className="stat-icon">🏆</div>
                 <div className="stat-number">4+</div>
                 <div className="stat-label">Hackathons</div>
               </div>
-              <div className="stat-card glass-card">
+              <div className="stat-card glass-card stat-internship">
                 <div className="stat-icon">💼</div>
-                <div className="stat-number">1</div>
-                <div className="stat-label">Internship</div>
+                <div className="stat-number">3</div>
+                <div className="stat-label">Internships</div>
               </div>
-              <div className="stat-card glass-card">
+              <div className="stat-card glass-card stat-project">
                 <div className="stat-icon">🚀</div>
-                <div className="stat-number">4</div>
-                <div className="stat-label">Projects</div>
+                <div className="stat-number">6</div>
+                <div className="stat-label">Projects Built</div>
               </div>
-              <div className="stat-card glass-card">
+              <div className="stat-card glass-card stat-club">
                 <div className="stat-icon">👥</div>
                 <div className="stat-number">1</div>
                 <div className="stat-label">Club Founded</div>
@@ -49,16 +48,12 @@ export default function About() {
             </div>
             <div className="about-bio">
               {personalInfo.aboutText.map((para, i) => (
-                <p key={i} dangerouslySetInnerHTML={{ __html: para.replace(/LEGION Club/, '<strong>LEGION Club</strong>').replace(/Software Engineer Intern at YugaYatra Retail OPC Pvt\. Ltd\./, '<strong>Software Engineer Intern at YugaYatra Retail OPC Pvt. Ltd.</strong>') }} />
+                <p key={i} dangerouslySetInnerHTML={{ __html: para
+                  .replace(/LEGION Club/g, '<strong>LEGION Club</strong>')
+                  .replace(/Alonzo AI/g, '<strong>Alonzo AI</strong>')
+                  .replace(/YugaYatra Retail/g, '<strong>YugaYatra Retail</strong>')
+                }} />
               ))}
-              <div className="about-chips">
-                <span className="chip">Python</span>
-                <span className="chip">React</span>
-                <span className="chip">FastAPI</span>
-                <span className="chip">AI/ML</span>
-                <span className="chip">ChromaDB</span>
-                <span className="chip">Team Leader</span>
-              </div>
               <div className="about-contact">
                 <span>📧 {personalInfo.email}</span>
                 <span>📍 {personalInfo.location}</span>
@@ -102,14 +97,6 @@ export default function About() {
                 ))}
               </div>
             </div>
-            <div className="skill-category glass-card">
-              <h3 className="category-title"><span className="cat-icon">🛠️</span> Dev Tools</h3>
-              <div className="skill-chips">
-                {skillsData.tools.map(skill => (
-                  <span key={skill} className="skill-chip chip-tool" onMouseMove={handleChipHover}>{skill}</span>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -119,16 +106,16 @@ export default function About() {
         <div className="container">
           <div className="section-label">ACADEMIC BACKGROUND</div>
           <h2 className="section-title">Education</h2>
-          <div className="edu-card glass-card" style={{ display: 'flex', gap: '1.5rem', padding: '2rem' }}>
-            <div className="edu-icon" style={{ fontSize: '2.5rem' }}>🎓</div>
+          <div className="edu-card glass-card">
+            <div className="edu-icon">🎓</div>
             <div className="edu-content">
-              <h3 className="edu-institution" style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.4rem', color: 'var(--on-surface)' }}>Swami Vivekananda Institute of Technology</h3>
-              <p className="edu-degree" style={{ color: 'var(--on-surface-muted)', fontWeight: 500 }}>B.Tech in Computer Science and Engineering (CSE)</p>
-              <p className="edu-date" style={{ fontSize: '0.85rem', color: 'var(--on-surface-dim)', marginTop: '0.3rem', marginBottom: '1rem' }}>📅 Sept 2023 – May 2027</p>
-              <span className="gpa-badge" style={{ display: 'inline-block', padding: '0.3rem 0.8rem', background: 'var(--surface-high)', borderRadius: 'var(--radius-pill)', fontSize: '0.8rem', fontWeight: 600, color: 'var(--primary)' }}>GPA: 7.7 / 10.0</span>
-              <div className="edu-courses" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '1.5rem' }}>
+              <h3 className="edu-institution">JNTUH Affiliated Engineering College</h3>
+              <p className="edu-degree">B.Tech in Computer Science and Engineering (CSE)</p>
+              <p className="edu-date">📅 Sept 2023 – May 2027</p>
+              <span className="gpa-badge">GPA: 7.2 / 10.0</span>
+              <div className="edu-courses">
                 {['Data Structures', 'Computer Networking', 'DevOps', 'Database Management Systems'].map(course => (
-                  <span key={course} className="tag">{course}</span>
+                  <span key={course} className="course-chip">{course}</span>
                 ))}
               </div>
             </div>

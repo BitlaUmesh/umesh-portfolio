@@ -4,8 +4,7 @@ export default function SkillsMarquee() {
   const allSkills = [
     ...skillsData.languages,
     ...skillsData.frameworks,
-    ...skillsData.ai,
-    ...skillsData.tools
+    ...skillsData.ai
   ];
 
   return (

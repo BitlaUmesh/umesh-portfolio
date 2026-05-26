@@ -5,6 +5,33 @@ import { personalInfo, socialLinks } from '../data/constants';
 import { Helmet } from 'react-helmet-async';
 import { motion as Motion } from 'framer-motion';
 
+function SpotlightWrapper({ children }) {
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    setCoords({ x, y });
+  };
+
+  return (
+    <div 
+      className={`spotlight-input-wrapper ${isHovered ? 'hovered' : ''}`}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      style={{
+        '--mouse-x': `${coords.x}px`,
+        '--mouse-y': `${coords.y}px`
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
 export default function Contact() {
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
@@ -50,10 +77,9 @@ export default function Contact() {
       <Helmet>
         <title>Contact | {personalInfo.name}</title>
       </Helmet>
-      <section className="section" id="contact" style={{ paddingTop: '150px', minHeight: '80vh' }}>
+      <section className="section" id="contact" style={{ paddingTop: '130px', minHeight: '80vh' }}>
         <div className="container">
-          <div className="section-label">LET'S CONNECT</div>
-          <h2 className="section-title">Get In Touch</h2>
+          <h2 className="about-section-title">GET IN TOUCH</h2>
           
           <div className="contact-grid">
             <div className="contact-info">
@@ -63,7 +89,7 @@ export default function Contact() {
               </p>
               
               <div className="contact-item">
-                <div className="contact-icon" style={{ color: 'var(--primary)' }}><FaEnvelope /></div>
+                <div className="contact-icon-wrapper email-icon-glow"><FaEnvelope /></div>
                 <div>
                   <div className="contact-label">Email</div>
                   <a href={`mailto:${personalInfo.email}`} className="contact-value interactive">{personalInfo.email}</a>
@@ -71,7 +97,7 @@ export default function Contact() {
               </div>
               
               <div className="contact-item">
-                <div className="contact-icon" style={{ color: '#86efac' }}><FaMapMarkerAlt /></div>
+                <div className="contact-icon-wrapper loc-icon-glow"><FaMapMarkerAlt /></div>
                 <div>
                   <div className="contact-label">Location</div>
                   <span className="contact-value">{personalInfo.location}</span>
@@ -111,21 +137,27 @@ export default function Contact() {
                   <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_KEY || ''} />
                   
                   <div className="form-group">
-                    <input type="text" name="name" id="name" className="form-input" placeholder="Name" required />
-                    <label htmlFor="name" className="form-label">Name</label>
+                    <SpotlightWrapper>
+                      <input type="text" name="name" id="name" className="form-input" placeholder="Name" required />
+                      <label htmlFor="name" className="form-label">Name</label>
+                    </SpotlightWrapper>
                   </div>
                   
                   <div className="form-group">
-                    <input type="email" name="email" id="email" className="form-input" placeholder="Email" required />
-                    <label htmlFor="email" className="form-label">Email</label>
+                    <SpotlightWrapper>
+                      <input type="email" name="email" id="email" className="form-input" placeholder="Email" required />
+                      <label htmlFor="email" className="form-label">Email</label>
+                    </SpotlightWrapper>
                   </div>
                   
                   <div className="form-group">
-                    <textarea name="message" id="message" className="form-input form-textarea" placeholder="Message" required></textarea>
-                    <label htmlFor="message" className="form-label">Message</label>
+                    <SpotlightWrapper>
+                      <textarea name="message" id="message" className="form-input form-textarea" placeholder="Message" required></textarea>
+                      <label htmlFor="message" className="form-label">Message</label>
+                    </SpotlightWrapper>
                   </div>
                   
-                  <button type="submit" className="btn btn-primary interactive" style={{ width: '100%' }} disabled={loading}>
+                  <button type="submit" className="btn btn-primary contact-submit-btn interactive" style={{ width: '100%' }} disabled={loading}>
                     {loading ? 'Sending...' : 'Send Message →'}
                   </button>
                   <div className="form-status" style={{ color: status.includes('❌') ? '#fca5a5' : '#86efac' }}>{status}</div>

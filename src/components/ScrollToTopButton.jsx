@@ -26,7 +26,7 @@ export default function ScrollToTopButton() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="scroll-to-top"
+          className="scroll-to-top interactive"
           aria-label="Scroll to top"
         >
           <span>↑</span>
