@@ -64,7 +64,7 @@ export default function Home() {
   const handleResumeClick = (e) => {
     e.preventDefault();
     if (window.innerWidth < 768) {
-      window.open(personalInfo.resumeDriveLink, '_blank');
+      window.open('/assets/Umesh_Resume.pdf', '_blank');
     } else {
       setIsResumeOpen(true);
     }
