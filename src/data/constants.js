@@ -1,11 +1,11 @@
 export const personalInfo = {
   name: "Bitla Umesh Kumar",
   role: "AI Engineer & Full-Stack Developer",
-  shortDesc: "CSE student specializing in AI/ML and full-stack development. Founder of the LEGION Club, 4x National Level Hackathon Participant, and Intern at Alonzo AI and YugaYatra Retail.",
+  shortDesc: "CSE student specializing in AI/ML and full-stack development. Founder of the LEGION Club, MERN Developer Intern at Infyntrek Systèmes, Alonzo AI, and YugaYatra Retail.",
   aboutText: [
-    "I'm a CSE student specializing in AI/ML integration and full-stack development. I build AI-native applications that solve real-world problems — from cybersecurity platforms to intelligent shopping agents.",
-    "As the Founder and Lead of the LEGION Club, I've proven I can lead teams and orchestrate complex events across the department. I have built production-grade AI and full-stack projects during my internships, including the SPARK program at Alonzo AI in Gachibowli, Hyderabad, and developed scalable web applications utilizing Cursor AI and Supabase at YugaYatra Retail.",
-    "My code speaks in Python, React, & FastAPI. My ambition speaks on hackathon stages and in late-night builds."
+    "I'm a CSE student specializing in AI/ML integration and full-stack development. I build AI-native applications that solve real-world problems — from Sanskrit RAG platforms to multimodal document intelligence systems.",
+    "As the Founder and Lead of the LEGION Club, I've proven I can lead teams and orchestrate complex events across the department. I have built production-grade web applications during my internships at Infyntrek Systèmes (MERN Stack), Alonzo AI (SPARK Program), and YugaYatra Retail.",
+    "My code speaks in Python, MERN Stack, & FastAPI. My ambition speaks on hackathon stages and in late-night builds."
   ],
   email: "bitlaumesh04@gmail.com",
   location: "Hyderabad, India",
@@ -14,10 +14,10 @@ export const personalInfo = {
 
 export const homeHighlights = [
   { text: "CSE Student (AI/ML & Full-Stack)", icon: "🎓" },
+  { text: "MERN Developer @Infyntrek Systèmes", icon: "⚡" },
+  { text: "AI & Full Stack Intern @Alonzo AI", icon: "🧠" },
   { text: "Founder, LEGION Club", icon: "👥" },
-  { text: "4x National Level Hackathon Participant", icon: "🏆" },
-  { text: "Software Intern @YugaYatra Retail", icon: "💼" },
-  { text: "AI & Full Stack Intern @Alonzo AI", icon: "🧠" }
+  { text: "4x National Hackathon Participant", icon: "🏆" }
 ];
 
 export const socialLinks = [
@@ -27,50 +27,66 @@ export const socialLinks = [
 
 export const experienceData = [
   {
-    company: "Alonzo AI",
-    role: "AI & Full-Stack Engineering Intern (SPARK Program)",
-    date: "May 2026 – June 2026",
+    company: "Infyntrek Systèmes",
+    role: "Software Developer Intern (MERN Stack)",
+    date: "Jul 2026 – Sep 2026",
     desc: [
-      "Merit-selected (5 students/college) for an in-person industry internship at Gachibowli, Hyderabad; building production-grade AI and full-stack projects with Alonzo AI's engineering team.",
-      "Contributing to open-source repos via Agentic Driven Development practices and delivering a capstone project at program conclusion."
+      "Developed and maintained full-stack web applications on the MERN stack (MongoDB, Express.js, React.js, Node.js) as part of the core Development team.",
+      "Designed and built RESTful APIs and back-end services with Node.js and Express.js, and implemented user-facing features with React.js.",
+      "Owned MongoDB schema design and data modeling; participated in code reviews and cross-team planning sessions to uphold engineering best practices."
     ],
-    tags: ["AI", "Full Stack", "React", "Python", "Agentic Dev"],
-    iconText: "AA",
-    logo: "/logos/alonzo.png"
+    tags: ["MongoDB", "Express.js", "React.js", "Node.js", "REST APIs"],
+    iconText: "IS",
+    logo: "/logos/infyntrek.png",
+    logoBg: "#ffffff"
   },
   {
-    company: "Squarcell Resource India (QSkill)",
-    role: "AI/ML Intern",
-    date: "Apr 2026 – May 2026",
-    desc: [
-      "Selected for an intensive virtual AI/ML program focusing on hands-on skill development and practical model deployment."
+    company: "Alonzo AI",
+    role: "Full Stack & AI Developer Intern",
+    date: "May 2026 – July 2026",
+    roles: [
+      {
+        role: "Associate Full Stack Developer Intern",
+        date: "June 2026 – July 2026",
+        desc: [
+          "Transitioned from the SPARK Program to a 1-month on-site internship, building company-owned production projects alongside Alonzo AI's engineering team.",
+          "Contributed across the full stack on internal products, applying Agentic Driven Development practices established during the SPARK program."
+        ]
+      },
+      {
+        role: "AI & Full-Stack Engineering Intern (SPARK Program)",
+        date: "May 2026 – June 2026",
+        desc: [
+          "Merit-selected (top 5 students/college) for an in-person industry internship at Gachibowli, Hyderabad, building production-grade AI and full-stack projects.",
+          "Contributed to open-source repositories via Agentic Driven Development and delivered a capstone project at program conclusion."
+        ]
+      }
     ],
-    tags: ["AI/ML", "Model Deployment", "Python"],
-    iconText: "QS",
-    logo: "/logos/qskill.png",
-    logoBg: "#ffffff"
+    tags: ["AI", "Full Stack", "React.js", "Python", "Agentic Dev", "SPARK Program"],
+    iconText: "AA",
+    logo: "/logos/alonzo.png"
   },
   {
     company: "YugaYatra Retail OPC Pvt. Ltd.",
     role: "Software Engineer Intern",
     date: "Mar 2026 – May 2026",
     desc: [
-      "Developed scalable web applications utilizing Cursor AI, Supabase, and integrated AI technologies for live freelance projects.",
-      "Contributed to e-commerce deployments and assisted in seller portal management, ensuring stable production rollouts."
+      "Built scalable web applications using Cursor AI, Supabase, and integrated AI technologies for live freelance client projects.",
+      "Contributed to e-commerce deployments and seller portal management, ensuring stable, zero-downtime production rollouts."
     ],
-    tags: ["Cursor AI", "Supabase", "React", "AI"],
+    tags: ["Cursor AI", "Supabase", "React", "AI", "E-commerce"],
     iconText: "YY",
     logo: "/logos/yugayatra.jpeg"
   },
   {
-    company: "LEGION Club",
+    company: "LEGION Club, SVIT",
     role: "Founder & Non-Technical Lead",
     date: "Feb 2026 – Present",
     desc: [
-      "Founded and structured the CSE Department club into Technical and Non-Technical divisions to serve the student body.",
-      "Directed the Non-Technical division, orchestrating multiple department-wide events and managing all logistical operations."
+      "Founded and structured the CSE Department's student club into Technical and Non-Technical divisions to better serve the student body.",
+      "Directed the Non-Technical division, orchestrating multiple department-wide events and managing all logistical operations end-to-end."
     ],
-    tags: ["Leadership", "Event Management", "Team Building"],
+    tags: ["Leadership", "Event Management", "Operations", "Team Lead"],
     iconText: "LC",
     logo: "/logos/legion.png"
   }
@@ -146,7 +162,31 @@ export const projectsData = [
 ];
 
 export const skillsData = {
-  languages: ["Python", "C", "HTML", "CSS"],
-  frameworks: ["React", "Next.js", "FastAPI", "Streamlit", "ChromaDB", "Supabase", "Upstash Redis", "Docker", "Git"],
-  ai: ["pgvector", "Groq API", "Cohere API", "OpenRouter", "PyMuPDF", "Llama 3.1", "DeepSeek V3.1", "Computer Vision", "Sentence Transformers"]
+  languages: ["Python", "JavaScript", "C", "HTML", "CSS"],
+  frameworks: ["React", "Next.js", "Node.js", "Express.js", "FastAPI", "Streamlit", "Git", "Docker", "Vercel"],
+  ai: ["MongoDB", "ChromaDB", "pgvector", "Supabase", "RAG Pipelines", "Cohere API", "Groq API", "OpenRouter", "PyMuPDF", "Upstash Redis", "REST APIs"]
 };
+
+export const credentialsData = [
+  {
+    id: "infyntrek-offer",
+    title: "Software Developer Intern",
+    organization: "Infyntrek Systèmes",
+    date: "July 2026",
+    category: "Offer Letter",
+    status: "ISO 27001 Verified",
+    documentUrl: "/documents/Infyntrek_Offer_Letter.pdf",
+    badgeClass: "badge-purple",
+    desc: "Official offer letter for MERN Stack Software Developer Internship at Infyntrek Systèmes."
+  },
+  {
+    id: "alonzo-spark",
+    title: "SPARK Program Merit Selection",
+    organization: "Alonzo AI",
+    date: "May 2026",
+    category: "Merit Award",
+    status: "Top 5 Merit Selected",
+    badgeClass: "badge-gold",
+    desc: "Merit-selected in top 5 students for on-site industry internship at Gachibowli, Hyderabad."
+  }
+];

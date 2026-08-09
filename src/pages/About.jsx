@@ -107,12 +107,17 @@ export default function About() {
           <div className="section-label">ACADEMIC BACKGROUND</div>
           <h2 className="section-title">Education</h2>
           <div className="edu-card glass-card">
-            <div className="edu-icon">🎓</div>
+            <div className="edu-logo-wrapper">
+              <img src="/svit-logo.jpg" alt="SVIT Seal Logo" className="edu-logo-img" />
+            </div>
             <div className="edu-content">
-              <h3 className="edu-institution">JNTUH Affiliated Engineering College</h3>
+              <div className="edu-affiliation">JNTUH (Jawaharlal Nehru Technological University, Hyderabad) Affiliated</div>
+              <h3 className="edu-institution">Swami Vivekananda Institute of Technology</h3>
               <p className="edu-degree">B.Tech in Computer Science and Engineering (CSE)</p>
-              <p className="edu-date">📅 Sept 2023 – May 2027</p>
-              <span className="gpa-badge">GPA: 7.2 / 10.0</span>
+              <div className="edu-meta">
+                <span className="edu-date">📅 Sept 2023 – May 2027</span>
+                <span className="gpa-badge">GPA: 7.2 / 10.0</span>
+              </div>
               <div className="edu-courses">
                 {['Data Structures', 'Computer Networking', 'DevOps', 'Database Management Systems'].map(course => (
                   <span key={course} className="course-chip">{course}</span>

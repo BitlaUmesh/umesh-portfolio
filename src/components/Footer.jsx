@@ -10,7 +10,7 @@ export default function Footer() {
           <a href="https://github.com/BitlaUmesh" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="footer-social">
             <FaGithub size={18} />
           </a>
-          <a href="https://linkedin.com/in/bitla-umesh-kumar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-social">
+          <a href="https://www.linkedin.com/in/bitla-umesh-kumar-272b2b344" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-social">
             <FaLinkedin size={18} />
           </a>
         </div>

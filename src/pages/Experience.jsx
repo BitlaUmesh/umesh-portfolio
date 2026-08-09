@@ -1,5 +1,5 @@
 import PageTransition from '../components/PageTransition';
-import { experienceData, personalInfo } from '../data/constants';
+import { experienceData, credentialsData, personalInfo } from '../data/constants';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 
@@ -77,9 +77,25 @@ export default function Experience() {
                     <span>{exp.date}</span>
                   </div>
 
-                  <ul className="timeline-bullets">
-                    {exp.desc.map((bullet, i) => <li key={i}>{bullet}</li>)}
-                  </ul>
+                  {exp.roles ? (
+                    <div className="sub-roles-container">
+                      {exp.roles.map((sub, sIdx) => (
+                        <div key={sIdx} className="sub-role-block">
+                          <div className="sub-role-header">
+                            <h4 className="sub-role-title">{sub.role}</h4>
+                            <span className="sub-role-date">📅 {sub.date}</span>
+                          </div>
+                          <ul className="timeline-bullets">
+                            {sub.desc.map((bullet, i) => <li key={i}>{bullet}</li>)}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <ul className="timeline-bullets">
+                      {exp.desc.map((bullet, i) => <li key={i}>{bullet}</li>)}
+                    </ul>
+                  )}
                   
                   <div className="timeline-tags">
                     {exp.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
@@ -87,8 +103,36 @@ export default function Experience() {
                 </div>
               </motion.div>
             ))}
-            
           </motion.div>
+
+          {/* VERIFIED CREDENTIALS & OFFER LETTERS */}
+          <div style={{ marginTop: '5rem' }}>
+            <div className="section-label">VERIFIED DOCUMENTS</div>
+            <h2 className="section-title" style={{ marginBottom: '2rem' }}>Offer Letters & Credentials</h2>
+            <div className="credentials-grid">
+              {credentialsData.map((cred) => (
+                <div key={cred.id} className="credential-card glass-card">
+                  <div className="credential-header">
+                    <span className={`badge ${cred.badgeClass}`}>{cred.status}</span>
+                    <span className="credential-date">{cred.date}</span>
+                  </div>
+                  <h3 className="credential-title">{cred.title}</h3>
+                  <div className="credential-org">{cred.organization}</div>
+                  <p className="credential-desc">{cred.desc}</p>
+                  {cred.documentUrl && (
+                    <a 
+                      href={cred.documentUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="btn interactive cred-btn"
+                    >
+                      📄 View Official Document
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </PageTransition>
